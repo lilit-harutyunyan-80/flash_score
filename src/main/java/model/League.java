@@ -1,6 +1,4 @@
 package model;
-
-import am.itspace.flashscore.model.enums.Country;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
