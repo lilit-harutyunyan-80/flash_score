@@ -10,4 +10,6 @@ public class FlashScoreApplication {
         SpringApplication.run(FlashScoreApplication.class, args);
     }
 
+
+
 }
