@@ -77,10 +77,7 @@
         <addForeignKeyConstraint baseColumnNames="sport_id" baseTableName="league" constraintName="FK_LEAGUE_ON_SPORT"
                                  referencedColumnNames="id" referencedTableName="sport"/>
     </changeSet>
-    <changeSet id="1683034402985-13" author="Admin (generated)">
-        <addForeignKeyConstraint baseColumnNames="sport_id" baseTableName="news" constraintName="FK_NEWS_ON_SPORT"
-                                 referencedColumnNames="id" referencedTableName="sport"/>
-    </changeSet>
+
     <changeSet id="1683034402985-14" author="Admin (generated)">
         <addForeignKeyConstraint baseColumnNames="sport_id" baseTableName="player" constraintName="FK_PLAYER_ON_SPORT"
                                  referencedColumnNames="id" referencedTableName="sport"/>
@@ -97,13 +94,8 @@
         <addForeignKeyConstraint baseColumnNames="sport_id" baseTableName="team" constraintName="FK_TEAM_ON_SPORT"
                                  referencedColumnNames="id" referencedTableName="sport"/>
     </changeSet>
-    <changeSet id="1683034402985-18" author="Admin (generated)">
-        <addForeignKeyConstraint baseColumnNames="team_player_info_id" baseTableName="team"
-                                 constraintName="FK_TEAM_ON_TEAM_PLAYER_INFO" referencedColumnNames="id"
-                                 referencedTableName="team_player_info"/>
-    </changeSet>
-    <changeSet id="1683034402985-19" author="Admin (generated)">
 
+    <changeSet id="1683034402985-19" author="Admin (generated)">
         <addColumn tableName="team">
             <column name="match" type="timestamp"/>
         </addColumn>
@@ -112,15 +104,6 @@
         <addColumn tableName="sport">
             <column name="image" type="varchar(255)"/>
         </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-21" author="Admin (generated)">
-        <addColumn tableName="news">
-            <column name="date" type="date"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-22" author="Admin (generated)">
-
-
     </changeSet>
 
 </databaseChangeLog>
