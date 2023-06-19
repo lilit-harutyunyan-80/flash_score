@@ -7,16 +7,6 @@
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
     <changeSet id="1683034402985-1" author="Admin (generated)">
 
-        <createTable tableName="favorite">
-            <column autoIncrement="true" name="id" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_favorite"/>
-            </column>
-            <column name="user_id" type="INT"/>
-            <column name="team_id" type="INT"/>
-            <column name="player_id" type="INT"/>
-        </createTable>
-    </changeSet>
-    <changeSet id="1683034402985-2" author="Admin (generated)">
         <createTable tableName="league">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_league"/>
@@ -28,17 +18,7 @@
         </createTable>
     </changeSet>
     <changeSet id="1683034402985-3" author="Admin (generated)">
-        <createTable tableName="news">
-            <column autoIncrement="true" name="id" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_news"/>
-            </column>
-            <column name="title" type="VARCHAR(255)"/>
-            <column name="description" type="LONGTEXT"/>
-            <column name="image" type="VARCHAR(255)"/>
-            <column name="sport_id" type="INT"/>
-        </createTable>
-    </changeSet>
-    <changeSet id="1683034402985-4" author="Admin (generated)">
+
         <createTable tableName="player">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_player"/>
@@ -47,6 +27,8 @@
             <column name="age" type="INT">
                 <constraints nullable="false"/>
             </column>
+            <column name="cup_count" type="INT"/>
+            <column name="golden_shoe" type="INT"/>
             <column name="sport_id" type="INT"/>
             <column name="team_id" type="INT"/>
             <column name="position" type="VARCHAR(255)"/>
@@ -54,33 +36,28 @@
         </createTable>
     </changeSet>
     <changeSet id="1683034402985-5" author="Admin (generated)">
+
         <createTable tableName="sport">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sport"/>
             </column>
-            <column name="sport_names" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
     <changeSet id="1683034402985-6" author="Admin (generated)">
+
         <createTable tableName="team">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_team"/>
             </column>
-            <column name="team_player_info_id" type="INT"/>
+            <column name="name" type="VARCHAR(255)"/>
             <column name="sport_id" type="INT"/>
             <column name="league_id" type="INT"/>
         </createTable>
     </changeSet>
     <changeSet id="1683034402985-7" author="Admin (generated)">
-        <createTable tableName="team_player_info">
-            <column autoIncrement="true" name="id" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_team_player_info"/>
-            </column>
-            <column name="name" type="VARCHAR(255)"/>
-            <column name="image" type="VARCHAR(255)"/>
-        </createTable>
-    </changeSet>
-    <changeSet id="1683034402985-8" author="Admin (generated)">
+
         <createTable tableName="user">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user"/>
@@ -94,19 +71,8 @@
             <column name="user_role" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet id="1683034402985-9" author="Admin (generated)">
-        <addForeignKeyConstraint baseColumnNames="player_id" baseTableName="favorite"
-                                 constraintName="FK_FAVORITE_ON_PLAYER" referencedColumnNames="id"
-                                 referencedTableName="player"/>
-    </changeSet>
-    <changeSet id="1683034402985-10" author="Admin (generated)">
-        <addForeignKeyConstraint baseColumnNames="team_id" baseTableName="favorite" constraintName="FK_FAVORITE_ON_TEAM"
-                                 referencedColumnNames="id" referencedTableName="team"/>
-    </changeSet>
-    <changeSet id="1683034402985-11" author="Admin (generated)">
-        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="favorite" constraintName="FK_FAVORITE_ON_USER"
-                                 referencedColumnNames="id" referencedTableName="user"/>
-    </changeSet>
+
+
     <changeSet id="1683034402985-12" author="Admin (generated)">
         <addForeignKeyConstraint baseColumnNames="sport_id" baseTableName="league" constraintName="FK_LEAGUE_ON_SPORT"
                                  referencedColumnNames="id" referencedTableName="sport"/>
@@ -137,6 +103,7 @@
                                  referencedTableName="team_player_info"/>
     </changeSet>
     <changeSet id="1683034402985-19" author="Admin (generated)">
+
         <addColumn tableName="team">
             <column name="match" type="timestamp"/>
         </addColumn>
@@ -152,148 +119,7 @@
         </addColumn>
     </changeSet>
     <changeSet id="1683034402985-22" author="Admin (generated)">
-        <createTable tableName="sport_league_video">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sport_league_video"/>
-            </column>
-            <column name="sport_id" type="int"/>
-            <column name="league_id" type="int"/>
-        </createTable>
-    </changeSet>
-    <changeSet id="1683034402985-23" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="sport_league_video" baseColumnNames="league_id" constraintName="FK_LEAGUE_ID"
-                                 referencedTableName="league"
-                                 referencedColumnNames="id"/>
-    </changeSet>
-    <changeSet id="1683034402985-24" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="sport_league_video" baseColumnNames="sport_id" constraintName="FK_SPORT_ID"
-                                 referencedTableName="sport"
-                                 referencedColumnNames="id"/>
-    </changeSet>
-    <changeSet id="1683034402985-25" author="Admin (generated)">
-        <addColumn tableName="sport_league_video">
-            <column name="video" type="varchar(255)"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-26" author="Admin (generated)">
-        <addColumn tableName="league">
-            <column name="sport_league_video_id" type="int"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-27" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="league" baseColumnNames="sport_league_video_id" constraintName="FK_LEAGUE_TO_SPORT_LEAGUE_VIDEO"
-                                 referencedTableName="sport_league_video"
-                                 referencedColumnNames="id"/>
-    </changeSet>
 
-    <changeSet id="1683034402985-28" author="Admin (generated)">
-        <dropForeignKeyConstraint baseTableName="sport_league_video" constraintName="FK_SPORT_ID"/>
-        <dropForeignKeyConstraint baseTableName="sport_league_video" constraintName="FK_LEAGUE_ID"/>
-    </changeSet>
-
-    <changeSet id="1683034402985-29" author="Admin (generated)">
-        <dropColumn tableName="sport_league_video">
-            <column name="sport_id"/>
-            <column name="league_id"/>
-        </dropColumn>
-    </changeSet>
-    <changeSet id="1683034402985-30" author="Admin (generated)">
-        <renameTable oldTableName="sport_league_video" newTableName="league_video"/>
-    </changeSet>
-
-    <changeSet id="1683034402985-31" author="Admin (generated)">
-        <renameTable oldTableName="league_video" newTableName="sport_league_video"/>
-    </changeSet>
-    <changeSet id="1683034402985-32" author="Admin (generated)">
-        <dropForeignKeyConstraint baseTableName="league" constraintName="FK_LEAGUE_TO_SPORT_LEAGUE_VIDEO"/>
-    </changeSet>
-    <changeSet id="1683034402985-33" author="Admin (generated)">
-        <dropColumn tableName="league">
-            <column name="sport_league_video_id"/>
-        </dropColumn>
-    </changeSet>
-    <changeSet id="1683034402985-34" author="Admin (generated)">
-        <addColumn tableName="sport_league_video">
-            <column name="league_id" type="int"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-35" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="sport_league_video" baseColumnNames="league_id" constraintName="FK_SPORT_LEAGUE_VIDEO_TO_LEAGUE"
-                                 referencedTableName="league"
-                                 referencedColumnNames="id"/>
-    </changeSet>
-    <changeSet id="1683034402985-36" author="Admin (generated)">
-        <dropForeignKeyConstraint baseTableName="sport_league_video" constraintName="FK_SPORT_LEAGUE_VIDEO_TO_LEAGUE"/>
-    </changeSet>
-    <changeSet id="1683034402985-37" author="Admin (generated)">
-        <dropColumn tableName="sport_league_video">
-            <column name="league_id"/>
-        </dropColumn>
-    </changeSet>
-    <changeSet id="1683034402985-38" author="Admin (generated)">
-        <addColumn tableName="league">
-            <column name="sport_league_video_id" type="int"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-39" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="league" baseColumnNames="sport_league_video_id" constraintName="FK_LEAGUE_TO_SPORT_LEAGUE_VIDEO"
-                                 referencedTableName="sport_league_video"
-                                 referencedColumnNames="id"/>
-    </changeSet>
-    <changeSet id="1683034402985-40" author="Admin (generated)">
-        <addColumn tableName="team">
-            <column name="player_id" type="int"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-41" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="team" baseColumnNames="player_id" constraintName="FK_TEAM_TO_PLAYER"
-                                 referencedTableName="player"
-                                 referencedColumnNames="id"/>
-    </changeSet>
-    <changeSet id="1683034402985-42" author="Admin (generated)">
-        <dropForeignKeyConstraint baseTableName="player" constraintName="FK_PLAYER_ON_TEAM"/>
-    </changeSet>
-    <changeSet id="1683034402985-43" author="Admin (generated)">
-        <dropColumn tableName="player">
-            <column name="team_id"/>
-        </dropColumn>
-    </changeSet>
-    <changeSet id="1683034402985-44" author="Admin (generated)">
-        <addColumn tableName="player">
-            <column name="image" type="varchar(255)"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-45" author="Admin (generated)">
-        <addColumn tableName="team">
-            <column name="history" type="longtext"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-46" author="Admin (generated)">
-        <dropColumn tableName="team">
-            <column name="history"/>
-        </dropColumn>
-    </changeSet>
-    <changeSet id="1683034402985-47" author="Admin (generated)">
-        <addColumn tableName="team_player_info">
-            <column name="history" type="longtext"/>
-        </addColumn>
-    </changeSet>
-    <changeSet id="1683034402985-48" author="Admin (generated)">
-        <createTable tableName="team_players_ids">
-            <column name="id" type="int" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_team_players_ids"/>
-            </column>
-            <column name="team_id" type="int"/>
-            <column name="player_id" type="int"/>
-        </createTable>
-    </changeSet>
-    <changeSet id="1683034402985-49" author="Admin (generated)">
-        <addForeignKeyConstraint baseTableName="team_players_ids" baseColumnNames="team_id" constraintName="FK_TEAM_PLAYERS_IDS_TO_TEAM"
-                                 referencedTableName="team"
-                                 referencedColumnNames="id"/>
-        <addForeignKeyConstraint baseTableName="team_players_ids" baseColumnNames="player_id" constraintName="FK_TEAM_PLAYERS_IDS_TO_PLAYER"
-                                 referencedTableName="player"
-                                 referencedColumnNames="id"/>
 
     </changeSet>
 
