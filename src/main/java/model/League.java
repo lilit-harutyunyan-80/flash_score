@@ -14,8 +14,6 @@ public class League {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @Enumerated(EnumType.STRING)
-    private Country country;
     private String logo;
     @ManyToOne
     @JoinColumn(name = "sport_id")
