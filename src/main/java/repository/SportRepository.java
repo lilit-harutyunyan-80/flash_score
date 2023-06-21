@@ -1,6 +1,7 @@
 package repository;
 
-import am.itspace.flashscore.model.Sport;
+
+import model.Sport;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
