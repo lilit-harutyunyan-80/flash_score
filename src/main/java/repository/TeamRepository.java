@@ -1,6 +1,6 @@
 package repository;
 
-import am.itspace.flashscore.model.Team;
+import model.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
