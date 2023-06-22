@@ -16,8 +16,6 @@ public class Player {
     private int id;
     private String name;
     private int age;
-    private int cup_count;
-    private int golden_shoe;
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
