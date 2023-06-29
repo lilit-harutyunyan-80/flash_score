@@ -15,6 +15,9 @@
             <column name="country" type="VARCHAR(255)"/>
             <column name="logo" type="VARCHAR(255)"/>
             <column name="sport_id" type="INT"/>
+            <column name="team_id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_league"/>
+            </column>
         </createTable>
     </changeSet>
 
