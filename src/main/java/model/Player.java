@@ -21,4 +21,5 @@ public class Player {
     private Sport sport;
     private String position;
     private String biography;
+    private Team team;
 }

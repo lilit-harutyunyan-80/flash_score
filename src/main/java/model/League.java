@@ -15,8 +15,11 @@ public class League {
     private int id;
     private String name;
     private String logo;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
+    @OneToMany
+    @JoinColumn(name = "team_id")
+    private Team team;
 
 }
