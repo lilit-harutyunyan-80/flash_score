@@ -36,36 +36,23 @@
 <body class="game_info" data-spy="scroll" data-target=".header">
 <!-- LOADER -->
 <div id="preloader">
-    <img class="preloader" src="/images/loading-img.gif" alt="">
+  <img class="preloader" src="/images/loading-img.gif" alt="">
 </div>
 <!-- END LOADER -->
 <th:block th:insert="/fragments/fragment::header"></th:block>
 <section id="contant" class="contant main-heading team">
-    <div class="row">
-        <div class="container">
-            <div class="col-md-3 column" th:each="leagues: ${league}">
-                <div class="card">
-                    <img class="img-responsive" th:src="@{/leagues/getImage(fileImage=${leagues.logo})}" alt="John" style="width:100%; min-height: 253px">
-                    <div class="">
-                        <h4 th:text="${leagues.name}"></h4>
-                        <p class="title" th:text="${leagues.country}"></p>
-                        <p>
-                        <div class="center"><a th:href="@{/league/{teams}(teams=${leagues.id})}" class="buttonToHref" style="background: #1c72ce;
-     color: #fff;
-     border: none;
-     padding: 6px 20px;
-     border-radius: 50px;
-     font-size: 14px;
-     font-weight: 500;">see teams or players</a></div>
-                        </p>
-                    </div>
-                </div>
-            </div>
+  <div class="row">
+
         </div>
+      </div>
     </div>
+  </div>
 </section>
 <th:block th:insert="/fragments/fragment::footer"></th:block>
 <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
+<!-- ALL JS FILES -->
+<script src="/js/all.js"></script>
+<!-- ALL PLUGINS -->
+<script src="/js/custom.js"></script>
 </body>
 </html>

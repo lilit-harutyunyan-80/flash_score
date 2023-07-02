@@ -17,7 +17,7 @@
             <column name="sport_id" type="INT"/>
             <column name="team_id" type="INT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="pk_league"/>
-            </column>
+           </column>
         </createTable>
     </changeSet>
 
