@@ -1,11 +1,9 @@
 package service.impl;
 
-import am.itspace.flashscore.model.League;
-import am.itspace.flashscore.repository.LeagueRepository;
-import am.itspace.flashscore.service.LeagueService;
 import lombok.RequiredArgsConstructor;
 import model.League;
 import org.springframework.stereotype.Service;
+import repository.LeagueRepository;
 import service.LeagueService;
 
 import java.util.List;

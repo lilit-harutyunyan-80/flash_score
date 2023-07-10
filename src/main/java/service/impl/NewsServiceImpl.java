@@ -1,9 +1,10 @@
 package service.impl;
 
-import am.itspace.flashscore.repository.NewsRepository;
-import am.itspace.flashscore.service.NewsService;
 import lombok.RequiredArgsConstructor;
+import model.News;
 import org.springframework.stereotype.Service;
+import repository.NewsRepository;
+import service.NewsService;
 
 import java.util.List;
 

@@ -1,19 +1,21 @@
 package service.impl;
 import lombok.RequiredArgsConstructor;
-import model.Team;
+import model.TeamPlayerInfo;
 import org.springframework.stereotype.Service;
+import repository.TeamPlayerInfoRepository;
+import service.TeamPlayerInfoService;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class TeamPlayerInfoServiceImpl implements TeamPlayerInfoService {
     private final TeamPlayerInfoRepository teamPlayerInfoRepository;
-    private final TeamRepository teamRepository;
+//    private final TeamRepository teamRepository;
 
     @Override
-    public List<Team> findById(int teamId) {
-        return teamRepository.findById(teamId);
+    public Optional<TeamPlayerInfo> findById(int teamId) {
+        return teamPlayerInfoRepository.findById(teamId);
     }
 
 }
