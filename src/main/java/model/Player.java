@@ -19,12 +19,7 @@ public class Player {
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
-    @ManyToOne
-    @JoinColumn(name="team_id")
-    private Team team;
     private String position;
     private String biography;
-
-
-
+    private Team team;
 }

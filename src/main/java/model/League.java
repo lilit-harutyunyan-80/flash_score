@@ -18,7 +18,7 @@ public class League {
     @OneToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "team_id")
     private Team team;
 
