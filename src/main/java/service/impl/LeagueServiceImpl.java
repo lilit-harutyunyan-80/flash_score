@@ -9,6 +9,7 @@ import service.LeagueService;
 
 import java.util.List;
 
+@Service
 @RequiredArgsConstructor
 public class LeagueServiceImpl implements LeagueService {
     private final LeagueRepository leagueRepository;
@@ -27,4 +28,3 @@ public class LeagueServiceImpl implements LeagueService {
     }
 
 }
-

@@ -1,6 +1,4 @@
 package service.impl;
-
-
 import lombok.RequiredArgsConstructor;
 import model.Sport;
 import org.springframework.stereotype.Service;
@@ -8,7 +6,6 @@ import repository.SportRepository;
 import service.SportService;
 
 import java.util.List;
-
 
 @Service
 @RequiredArgsConstructor
@@ -31,4 +28,3 @@ public class SportServiceImpl implements SportService {
     }
 
 }
-

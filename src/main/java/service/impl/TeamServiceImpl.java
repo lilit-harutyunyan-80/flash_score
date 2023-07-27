@@ -1,6 +1,4 @@
 package service.impl;
-
-
 import lombok.RequiredArgsConstructor;
 import model.Team;
 import org.springframework.stereotype.Service;
@@ -8,7 +6,6 @@ import repository.TeamRepository;
 import service.TeamService;
 
 import java.util.List;
-
 
 @Service
 @RequiredArgsConstructor
